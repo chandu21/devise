@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<ul style = "list-style-type:none;">
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+
+</ul>
+
+
+
+
+
+
+
+
+
+<div class = "container">
+<div class = "row">
+<div class = "span9"><%= yield %></div>
+	<div class = "span3">
+	<h2>About</h2>
+	Casino Royale is the first novel by the British author Ian Fleming. Published in 1953, it is the first James Bond book, and it paved the way for a further eleven novels and two short story collections by Fleming, followed by numerous continuation Bond novels by other authors.
+
+The story concerns the British secret agent James Bond, gambling at the casino in Royale-les-Eaux to bankrupt Le Chiffre, the treasurer of a French union and a member of the Russian secret service. Bond is supported in his endeavours by Vesper Lynd, a member of his own service,
+		
+	</div>
+  
+ 
+ </div>
+</div>
+
+
+</body>
+</html>
